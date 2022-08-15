@@ -613,7 +613,8 @@ void Pragma::emit(std::shared_ptr<EmitCtx> ctx, std::ostream &stream,
             clang_emit_helper("unroll");
             break;
         case PragmaKind::OMP_SIMD:
-            stream << "omp simd";
+            //stream << "omp simd";
+            stream << "pragma unroll 8";
             break;
         case PragmaKind::MAX_PRAGMA_KIND:
             ERROR("Bad PragmaKind");
